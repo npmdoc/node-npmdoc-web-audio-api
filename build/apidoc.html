@@ -1,0 +1,3344 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/sebpiq/node-web-audio-api"
+
+    >web-audio-api (v0.2.2)</a>
+</h1>
+<h4>Node.js implementation of Web audio API</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api">module web-audio-api</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBuffer">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioBuffer
+            <span class="apidocSignatureSpan">(numberOfChannels, length, sampleRate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBufferSourceNode">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioBufferSourceNode
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioContext">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioContext
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioDestinationNode">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioDestinationNode
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioNode">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioNode
+            <span class="apidocSignatureSpan">(context, numberOfInputs, numberOfOutputs, channelCount, channelCountMode, channelInterpretation)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioParam
+            <span class="apidocSignatureSpan">(context, defaultValue, rate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.GainNode">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>GainNode
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>AudioBuffer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>AudioBufferSourceNode.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>AudioContext.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>AudioDestinationNode.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>AudioNode.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>AudioParam.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>GainNode.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>audioports</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>constants</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>index</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioBuffer">module web-audio-api.AudioBuffer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBuffer.AudioBuffer">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioBuffer
+            <span class="apidocSignatureSpan">(numberOfChannels, length, sampleRate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBuffer.filledWithVal">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.</span>filledWithVal
+            <span class="apidocSignatureSpan">(val, numberOfChannels, length, sampleRate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBuffer.fromArray">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.</span>fromArray
+            <span class="apidocSignatureSpan">(array, sampleRate)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioBuffer.prototype">module web-audio-api.AudioBuffer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBuffer.prototype._defineAttrs">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.prototype.</span>_defineAttrs
+            <span class="apidocSignatureSpan">(numberOfChannels, length, sampleRate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBuffer.prototype.concat">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.prototype.</span>concat
+            <span class="apidocSignatureSpan">(other)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBuffer.prototype.getChannelData">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.prototype.</span>getChannelData
+            <span class="apidocSignatureSpan">(channel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBuffer.prototype.set">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.prototype.</span>set
+            <span class="apidocSignatureSpan">(other, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBuffer.prototype.slice">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.prototype.</span>slice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioBufferSourceNode">module web-audio-api.AudioBufferSourceNode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBufferSourceNode.AudioBufferSourceNode">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioBufferSourceNode
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioBufferSourceNode.prototype">module web-audio-api.AudioBufferSourceNode.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype._dsp">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>_dsp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype._dspZeros">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>_dspZeros
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype._tick">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>_tick
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype.onended">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>onended
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype.start">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>start
+            <span class="apidocSignatureSpan">(when, offset, duration)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype.stop">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>stop
+            <span class="apidocSignatureSpan">(when)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioContext">module web-audio-api.AudioContext</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioContext.AudioContext">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioContext
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioContext.prototype">module web-audio-api.AudioContext.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioContext.prototype._kill">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>_kill
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioContext.prototype.collectNodes">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>collectNodes
+            <span class="apidocSignatureSpan">(node, allNodes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioContext.prototype.createBuffer">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>createBuffer
+            <span class="apidocSignatureSpan">(numberOfChannels, length, sampleRate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioContext.prototype.createBufferSource">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>createBufferSource
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioContext.prototype.createGain">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>createGain
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioContext.prototype.createScriptProcessor">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>createScriptProcessor
+            <span class="apidocSignatureSpan">(bufferSize, numberOfInputChannels, numberOfOutputChannels)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioContext.prototype.decodeAudioData">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>decodeAudioData
+            <span class="apidocSignatureSpan">(audioData, successCallback, errorCallback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioDestinationNode">module web-audio-api.AudioDestinationNode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioDestinationNode.AudioDestinationNode">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioDestinationNode
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioDestinationNode.prototype">module web-audio-api.AudioDestinationNode.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioDestinationNode.prototype._tick">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioDestinationNode.prototype.</span>_tick
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioNode">module web-audio-api.AudioNode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioNode.AudioNode">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioNode
+            <span class="apidocSignatureSpan">(context, numberOfInputs, numberOfOutputs, channelCount, channelCountMode, channelInterpretation)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioNode.prototype">module web-audio-api.AudioNode.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioNode.prototype._kill">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioNode.prototype.</span>_kill
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioNode.prototype.connect">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioNode.prototype.</span>connect
+            <span class="apidocSignatureSpan">(destination)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioNode.prototype.disconnect">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioNode.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioParam">module web-audio-api.AudioParam</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.AudioParam">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>AudioParam
+            <span class="apidocSignatureSpan">(context, defaultValue, rate)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.AudioParam.prototype">module web-audio-api.AudioParam.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._arithmeticSeries">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_arithmeticSeries
+            <span class="apidocSignatureSpan">(U0, step)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._dsp">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_dsp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._geometricSeries">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_geometricSeries
+            <span class="apidocSignatureSpan">(U0, ratio)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._nextEvent">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_nextEvent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._tick">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_tick
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._toConstant">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_toConstant
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_SetValueCurve">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_aRate_SetValueCurve
+            <span class="apidocSignatureSpan">(values, startTime, duration, onended)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_exponentialRamp">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_aRate_exponentialRamp
+            <span class="apidocSignatureSpan">(target, timeEnd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_linearRamp">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_aRate_linearRamp
+            <span class="apidocSignatureSpan">(target, endTime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_setTarget">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_aRate_setTarget
+            <span class="apidocSignatureSpan">(target, Tc, onended)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_SetValueCurve">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_kRate_SetValueCurve
+            <span class="apidocSignatureSpan">(values, startTime, duration, onended)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_exponentialRamp">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_kRate_exponentialRamp
+            <span class="apidocSignatureSpan">(target, timeEnd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_linearRamp">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_kRate_linearRamp
+            <span class="apidocSignatureSpan">(target, endTime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_setTarget">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_kRate_setTarget
+            <span class="apidocSignatureSpan">(target, Tc, onended)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype.cancelScheduledValues">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>cancelScheduledValues
+            <span class="apidocSignatureSpan">(startTime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype.exponentialRampToValueAtTime">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>exponentialRampToValueAtTime
+            <span class="apidocSignatureSpan">(value, endTime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype.linearRampToValueAtTime">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>linearRampToValueAtTime
+            <span class="apidocSignatureSpan">(value, endTime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype.setTargetAtTime">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>setTargetAtTime
+            <span class="apidocSignatureSpan">(target, startTime, timeConstant)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype.setValueAtTime">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>setValueAtTime
+            <span class="apidocSignatureSpan">(value, startTime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.AudioParam.prototype.setValueCurveAtTime">
+            function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>setValueCurveAtTime
+            <span class="apidocSignatureSpan">(values, startTime, duration)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.GainNode">module web-audio-api.GainNode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.GainNode.GainNode">
+            function <span class="apidocSignatureSpan">web-audio-api.</span>GainNode
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.GainNode.prototype">module web-audio-api.GainNode.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.GainNode.prototype._tick">
+            function <span class="apidocSignatureSpan">web-audio-api.GainNode.prototype.</span>_tick
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.audioports">module web-audio-api.audioports</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.audioports.AudioInput">
+            function <span class="apidocSignatureSpan">web-audio-api.audioports.</span>AudioInput
+            <span class="apidocSignatureSpan">(context, node, id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.audioports.AudioOutput">
+            function <span class="apidocSignatureSpan">web-audio-api.audioports.</span>AudioOutput
+            <span class="apidocSignatureSpan">(context, node, id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.index">module web-audio-api.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.index.AudioBuffer">
+            function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioBuffer
+            <span class="apidocSignatureSpan">(numberOfChannels, length, sampleRate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.index.AudioBufferSourceNode">
+            function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioBufferSourceNode
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.index.AudioContext">
+            function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioContext
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.index.AudioDestinationNode">
+            function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioDestinationNode
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.index.AudioNode">
+            function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioNode
+            <span class="apidocSignatureSpan">(context, numberOfInputs, numberOfOutputs, channelCount, channelCountMode, channelInterpretation)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.index.AudioParam">
+            function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioParam
+            <span class="apidocSignatureSpan">(context, defaultValue, rate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.index.GainNode">
+            function <span class="apidocSignatureSpan">web-audio-api.index.</span>GainNode
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-audio-api.index.</span>constants</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-audio-api.utils">module web-audio-api.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.utils.decodeAudioData">
+            function <span class="apidocSignatureSpan">web-audio-api.utils.</span>decodeAudioData
+            <span class="apidocSignatureSpan">(buffer, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-audio-api.utils.readOnlyAttr">
+            function <span class="apidocSignatureSpan">web-audio-api.utils.</span>readOnlyAttr
+            <span class="apidocSignatureSpan">(obj, name, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api" id="apidoc.module.web-audio-api">module web-audio-api</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBuffer" id="apidoc.element.web-audio-api.AudioBuffer">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioBuffer
+        <span class="apidocSignatureSpan">(numberOfChannels, length, sampleRate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioBuffer(numberOfChannels, length, sampleRate) {
+  var ch
+  this._data = []
+  // Just a hack to be able to create a partially initialized AudioBuffer
+  if (arguments.length) {
+    for (ch = 0; ch &#x3c; numberOfChannels; ch++)
+      this._data.push(new Float32Array(length))
+    this._defineAttrs(numberOfChannels, length, sampleRate)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBufferSourceNode" id="apidoc.element.web-audio-api.AudioBufferSourceNode">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioBufferSourceNode
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioBufferSourceNode(context) {
+  super$0.call(this, context, 0, 1, undefined, &#x27;max&#x27;, &#x27;speakers&#x27;)
+
+  this.buffer = null
+  this.loop = false
+  this.loopStart = 0
+  this.loopEnd = 0
+
+  readOnlyAttr(this, &#x27;playbackRate&#x27;, new AudioParam(this.context, 1, &#x27;a&#x27;))
+
+  this._dsp = this._dspZeros
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioContext" id="apidoc.element.web-audio-api.AudioContext">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioContext
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioContext(opts) {var this$0 = this;
+  var outBuff
+
+<span class="apidocCodeCommentSpan">  /*Object.defineProperty(this, &#x27;currentTime&#x27;, {
+  writable: false,
+  get: function() {}
+})*/
+</span>
+  Object.defineProperty(this, &#x27;destination&#x27;, {
+    writable: false,
+    value: new AudioDestinationNode(this)
+  })
+  //this.destination = new AudioDestinationNode(this)
+
+  /*Object.defineProperty(this, &#x27;sampleRate&#x27;, {
+  writable: false,
+  value: {} // TODO
+})
+
+Object.defineProperty(this, &#x27;listener&#x27;, {
+  writable: false,
+  value: {} // TODO
+})*/
+  this.currentTime = 0
+  this.sampleRate = 44100
+  this.numberOfChannels = 2
+  this.bitDepth = 16
+
+  this.format = {
+    numberOfChannels: 2,
+    bitDepth: 16,
+    sampleRate: this.sampleRate
+  }
+
+  opts = opts || {}
+  if (opts.bufferSize) this.format.bufferSize = opts.bufferSize
+  if (opts.numBuffers) this.format.numBuffers = opts.numBuffers
+
+  this.outStream = null
+  this._encoder = pcmUtils.BufferEncoder(this.format)
+  this._frame = 0
+  this._playing = true
+  this._audioOutLoopRunning = false
+
+  // When a new connection is established, start to pull audio
+  this.destination._inputs[0].on(&#x27;connection&#x27;, function()  {
+    if (this$0._audioOutLoopRunning) return
+    if (!this$0.outStream) throw new Error(&#x27;you need to set outStream to send the audio somewhere&#x27;)
+    this$0._audioOutLoopRunning = true
+    async.whilst(
+      function()  {
+        return this$0._playing
+      },
+      function(next)  {
+        outBuff = this$0.destination._tick()
+        // If there is space in the output stream&#x27;s buffers, we write,
+        // otherwise we wait for &#x27;drain&#x27;
+        this$0._frame += BLOCK_SIZE
+        this$0.currentTime = this$0._frame * 1 / this$0.sampleRate
+        // TODO setImmediate here is for cases where the outStream won&#x27;t get
+        // full and we end up with call stack max size reached.
+        // But is it optimal?
+        if (this$0.outStream.write(this$0._encoder(outBuff._data)))
+          setImmediate(next)
+        else this$0.outStream.once(&#x27;drain&#x27;, next)
+      },
+      function(err)  {
+        this$0._audioOutLoopRunning = false
+        if (err) return this$0.emit(&#x27;error&#x27;, err)
+      }
+    )
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioDestinationNode" id="apidoc.element.web-audio-api.AudioDestinationNode">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioDestinationNode
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioDestinationNode(context) {
+  super$0.call(this, context, 1, 0, 2, &#x27;explicit&#x27;, &#x27;speakers&#x27;)
+
+  readOnlyAttr(this, &#x27;maxChannelCount&#x27;, 2)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioNode" id="apidoc.element.web-audio-api.AudioNode">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioNode
+        <span class="apidocSignatureSpan">(context, numberOfInputs, numberOfOutputs, channelCount, channelCountMode, channelInterpretation)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioNode(context, numberOfInputs, numberOfOutputs, channelCount, channelCountMode, channelInterpretation) {
+
+  super$0.call(this, context)
+
+  readOnlyAttr(this, &#x27;context&#x27;, context)
+  readOnlyAttr(this, &#x27;numberOfInputs&#x27;, numberOfInputs)
+  readOnlyAttr(this, &#x27;numberOfOutputs&#x27;, numberOfOutputs)
+
+  channelCount = channelCount || 2
+  Object.defineProperty(this, &#x27;channelCount&#x27;, {
+    get: function() {
+      return channelCount
+    },
+    set: function(val) {
+      if (val &#x3c; 1) throw new Error(&#x27;Invalid number of channels&#x27;)
+      channelCount = val
+    },
+    configurable: true
+  })
+
+  var channelCountMode = channelCountMode
+  Object.defineProperty(this, &#x27;channelCountMode&#x27;, {
+    get: function() {
+      return channelCountMode
+    },
+    set: function(val) {
+      if (ChannelCountMode.indexOf(val) === -1)
+        throw new Error(&#x27;Unvalid value for channelCountMode : &#x27; + val)
+      channelCountMode = val
+    },
+    configurable: true
+  })
+
+  var channelInterpretation = channelInterpretation
+  Object.defineProperty(this, &#x27;channelInterpretation&#x27;, {
+    get: function() {
+      return channelInterpretation
+    },
+    set: function(val) {
+      if (ChannelInterpretation.indexOf(val) === -1)
+        throw new Error(&#x27;Unvalid value for channelInterpretation : &#x27; + val)
+      channelInterpretation = val
+    },
+    configurable: true
+  })
+
+  // Initialize audio ports
+  var i
+  this._inputs = []
+  this._outputs = []
+  for (i = 0; i &#x3c; this.numberOfInputs; i++)
+    this._inputs.push(new AudioInput(context, this, i))
+  for (i = 0; i &#x3c; this.numberOfOutputs; i++)
+    this._outputs.push(new AudioOutput(context, this, i))
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam" id="apidoc.element.web-audio-api.AudioParam">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioParam
+        <span class="apidocSignatureSpan">(context, defaultValue, rate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioParam(context, defaultValue, rate) {
+  super$0.call(this, context)
+
+  if (typeof defaultValue !== &#x27;number&#x27;)
+    throw new Error(&#x27;defaultValue must be a number&#x27;)
+
+  rate = rate || &#x27;k&#x27;
+  if (rate !== &#x27;a&#x27; &#x26;&#x26; rate !== &#x27;k&#x27;)
+    throw new Error(&#x27;invalid rate, must be a or k&#x27;)
+  this._rate = rate
+
+  Object.defineProperty(this, &#x27;defaultValue&#x27;, {
+    value: defaultValue,
+    writable: false
+  })
+
+  this._instrinsicValue = defaultValue
+  Object.defineProperty(this, &#x27;value&#x27;, {
+    get: function() {
+      return this._instrinsicValue
+    },
+    set: function(newVal) {
+      this._instrinsicValue = newVal
+      this._toConstant()
+      this._scheduled = []
+    }
+  })
+
+  this._toConstant()
+
+  // Using AudioNodes as inputs for AudioParam :
+  // we have to set same channel attributes as for AudioNodes,
+  // so the input knows how to do the mixing
+  this.channelInterpretation = &#x27;discrete&#x27;
+  this.channelCount = 1
+  this.channelCountMode = &#x27;explicit&#x27;
+  this._input = new AudioInput(this.context, this, 0)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.GainNode" id="apidoc.element.web-audio-api.GainNode">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>GainNode
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GainNode(context) {
+  super$0.call(this, context, 1, 1, undefined, &#x27;max&#x27;, &#x27;speakers&#x27;)
+  readOnlyAttr(this, &#x27;gain&#x27;, new AudioParam(this.context, 1, &#x27;a&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioBuffer" id="apidoc.module.web-audio-api.AudioBuffer">module web-audio-api.AudioBuffer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBuffer.AudioBuffer" id="apidoc.element.web-audio-api.AudioBuffer.AudioBuffer">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioBuffer
+        <span class="apidocSignatureSpan">(numberOfChannels, length, sampleRate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioBuffer(numberOfChannels, length, sampleRate) {
+  var ch
+  this._data = []
+  // Just a hack to be able to create a partially initialized AudioBuffer
+  if (arguments.length) {
+    for (ch = 0; ch &#x3c; numberOfChannels; ch++)
+      this._data.push(new Float32Array(length))
+    this._defineAttrs(numberOfChannels, length, sampleRate)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBuffer.filledWithVal" id="apidoc.element.web-audio-api.AudioBuffer.filledWithVal">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.</span>filledWithVal
+        <span class="apidocSignatureSpan">(val, numberOfChannels, length, sampleRate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filledWithVal = function (val, numberOfChannels, length, sampleRate) {
+  var audioBuffer = new AudioBuffer(numberOfChannels, length, sampleRate),
+    chData, ch, i
+  for (ch = 0; ch &#x3c; numberOfChannels; ch++) {
+    chData = audioBuffer._data[ch]
+    for (i = 0; i &#x3c; length; i++) chData[i] = val
+  }
+  return audioBuffer
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBuffer.fromArray" id="apidoc.element.web-audio-api.AudioBuffer.fromArray">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.</span>fromArray
+        <span class="apidocSignatureSpan">(array, sampleRate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromArray = function (array, sampleRate) {
+  var audioBuffer = new AudioBuffer()
+  audioBuffer._defineAttrs(array.length, array[0].length, sampleRate)
+  array.forEach(function(chArray) {
+    if (!(chArray instanceof Float32Array))
+      chArray = new Float32Array(chArray)
+    audioBuffer._data.push(chArray)
+  })
+  return audioBuffer
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+slice() {
+  var sliceArgs = _.toArray(arguments)
+  var array = this._data.map(function(chArray) {
+      return chArray.subarray.apply(chArray, sliceArgs)
+    })
+  return AudioBuffer.<span class="apidocCodeKeywordSpan">fromArray</span>(array, this.sampleRate)
+}
+
+concat(other) {
+  if (other.sampleRate !== this.sampleRate)
+    throw new Error(&#x27;the 2 AudioBuffers don\&#x27;t have the same sampleRate&#x27;)
+  if (other.numberOfChannels !== this.numberOfChannels)
+    throw new Error(&#x27;the 2 AudioBuffers don\&#x27;t have the same numberOfChannels&#x27;)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioBuffer.prototype" id="apidoc.module.web-audio-api.AudioBuffer.prototype">module web-audio-api.AudioBuffer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBuffer.prototype._defineAttrs" id="apidoc.element.web-audio-api.AudioBuffer.prototype._defineAttrs">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.prototype.</span>_defineAttrs
+        <span class="apidocSignatureSpan">(numberOfChannels, length, sampleRate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_defineAttrs = function (numberOfChannels, length, sampleRate) {
+  if (!(sampleRate &#x3e; 0)) throw new Error(&#x27;invalid sample rate : &#x27; + sampleRate)
+  Object.defineProperty(this, &#x27;sampleRate&#x27;, {
+    value: sampleRate,
+    writable: false
+  })
+  if (!(length &#x3e;= 0)) throw new Error(&#x27;invalid length : &#x27; + length)
+  Object.defineProperty(this, &#x27;length&#x27;, {
+    value: length,
+    writable: false
+  })
+  Object.defineProperty(this, &#x27;duration&#x27;, {
+    value: length / sampleRate,
+    writable: false
+  })
+  if (!(numberOfChannels &#x3e; 0)) throw new Error(&#x27;invalid numberOfChannels : &#x27; + numberOfChannels)
+  Object.defineProperty(this, &#x27;numberOfChannels&#x27;, {
+    value: numberOfChannels,
+    writable: false
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+constructor(numberOfChannels, length, sampleRate) {
+  var ch
+  this._data = []
+  // Just a hack to be able to create a partially initialized AudioBuffer
+  if (arguments.length) {
+    for (ch = 0; ch &#x3c; numberOfChannels; ch++)
+      this._data.push(new Float32Array(length))
+    this.<span class="apidocCodeKeywordSpan">_defineAttrs</span>(numberOfChannels, length, sampleRate)
+  }
+}
+
+getChannelData(channel) {
+  if (channel &#x3e;= this.numberOfChannels) throw new Error(&#x27;invalid channel&#x27;)
+  return this._data[channel]
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBuffer.prototype.concat" id="apidoc.element.web-audio-api.AudioBuffer.prototype.concat">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.prototype.</span>concat
+        <span class="apidocSignatureSpan">(other)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">concat = function (other) {
+  if (other.sampleRate !== this.sampleRate)
+    throw new Error(&#x27;the 2 AudioBuffers don\&#x27;t have the same sampleRate&#x27;)
+  if (other.numberOfChannels !== this.numberOfChannels)
+    throw new Error(&#x27;the 2 AudioBuffers don\&#x27;t have the same numberOfChannels&#x27;)
+  var newLength = other.length + this.length,
+    newChArray, newArray = this._data.map(function(chArray, ch) {
+      newChArray = new Float32Array(newLength)
+      newChArray.set(chArray)
+      newChArray.set(other._data[ch], chArray.length)
+      return newChArray
+    })
+  return AudioBuffer.fromArray(newArray, this.sampleRate)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  collectNodes(node, allNodes) {
+allNodes = allNodes || []
+node = node || this.destination
+_.chain(node._inputs)
+  .pluck(&#x27;sources&#x27;)
+  .reduce(function(all, sources) {
+    return all.<span class="apidocCodeKeywordSpan">concat</span>(sources)
+  }, [])
+  .pluck(&#x27;node&#x27;).value()
+  .forEach((upstreamNode) =&#x3e; {
+    if (!_.contains(allNodes, upstreamNode)) {
+      allNodes.push(upstreamNode)
+      this.collectNodes(upstreamNode, allNodes)
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBuffer.prototype.getChannelData" id="apidoc.element.web-audio-api.AudioBuffer.prototype.getChannelData">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.prototype.</span>getChannelData
+        <span class="apidocSignatureSpan">(channel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getChannelData = function (channel) {
+  if (channel &#x3e;= this.numberOfChannels) throw new Error(&#x27;invalid channel&#x27;)
+  return this._data[channel]
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+set(other, offset) {
+  if (other.sampleRate !== this.sampleRate)
+    throw new Error(&#x27;the 2 AudioBuffers don\&#x27;t have the same sampleRate&#x27;)
+  if (other.numberOfChannels !== this.numberOfChannels)
+    throw new Error(&#x27;the 2 AudioBuffers don\&#x27;t have the same numberOfChannels&#x27;)
+  this._data.forEach(function(chArray, ch) {
+    chArray.set(other.<span class="apidocCodeKeywordSpan">getChannelData</span>(ch), offset)
+  })
+}
+
+_defineAttrs(numberOfChannels, length, sampleRate) {
+  if (!(sampleRate &#x3e; 0)) throw new Error(&#x27;invalid sample rate : &#x27; + sampleRate)
+  Object.defineProperty(this, &#x27;sampleRate&#x27;, {
+    value: sampleRate,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBuffer.prototype.set" id="apidoc.element.web-audio-api.AudioBuffer.prototype.set">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.prototype.</span>set
+        <span class="apidocSignatureSpan">(other, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (other, offset) {
+  if (other.sampleRate !== this.sampleRate)
+    throw new Error(&#x27;the 2 AudioBuffers don\&#x27;t have the same sampleRate&#x27;)
+  if (other.numberOfChannels !== this.numberOfChannels)
+    throw new Error(&#x27;the 2 AudioBuffers don\&#x27;t have the same numberOfChannels&#x27;)
+  this._data.forEach(function(chArray, ch) {
+    chArray.set(other.getChannelData(ch), offset)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (other.sampleRate !== this.sampleRate)
+    throw new Error(&#x27;the 2 AudioBuffers don\&#x27;t have the same sampleRate&#x27;)
+  if (other.numberOfChannels !== this.numberOfChannels)
+    throw new Error(&#x27;the 2 AudioBuffers don\&#x27;t have the same numberOfChannels&#x27;)
+  var newLength = other.length + this.length,
+    newChArray, newArray = this._data.map(function(chArray, ch) {
+      newChArray = new Float32Array(newLength)
+      newChArray.<span class="apidocCodeKeywordSpan">set</span>(chArray)
+      newChArray.set(other._data[ch], chArray.length)
+      return newChArray
+    })
+  return AudioBuffer.fromArray(newArray, this.sampleRate)
+}
+
+set(other, offset) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBuffer.prototype.slice" id="apidoc.element.web-audio-api.AudioBuffer.prototype.slice">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBuffer.prototype.</span>slice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">slice = function () {
+  var sliceArgs = _.toArray(arguments)
+  var array = this._data.map(function(chArray) {
+      return chArray.subarray.apply(chArray, sliceArgs)
+    })
+  return AudioBuffer.fromArray(array, this.sampleRate)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+reinitPlayback()
+
+this._dsp = function() {
+  cursorNext = cursor + blockSize
+  // If there&#x27;s enough data left to be read in the buffer, just read it,
+  // otherwise we need to handle things a bit differently
+  if (cursorNext &#x3c; cursorEnd) {
+    outBuffer = this.buffer.<span class="apidocCodeKeywordSpan">slice</span>(cursor, cursorNext)
+    cursor = cursorNext
+    return outBuffer
+  } else {
+    outBuffer = new AudioBuffer(this.buffer.numberOfChannels, blockSize, sampleRate)
+    outBuffer.set(this.buffer.slice(cursor, cursorNext))
+    // If looping, we must reinitialize our cursor variables.
+    // If not looping, we free the node
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioBufferSourceNode" id="apidoc.module.web-audio-api.AudioBufferSourceNode">module web-audio-api.AudioBufferSourceNode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBufferSourceNode.AudioBufferSourceNode" id="apidoc.element.web-audio-api.AudioBufferSourceNode.AudioBufferSourceNode">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioBufferSourceNode
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioBufferSourceNode(context) {
+  super$0.call(this, context, 0, 1, undefined, &#x27;max&#x27;, &#x27;speakers&#x27;)
+
+  this.buffer = null
+  this.loop = false
+  this.loopStart = 0
+  this.loopEnd = 0
+
+  readOnlyAttr(this, &#x27;playbackRate&#x27;, new AudioParam(this.context, 1, &#x27;a&#x27;))
+
+  this._dsp = this._dspZeros
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioBufferSourceNode.prototype" id="apidoc.module.web-audio-api.AudioBufferSourceNode.prototype">module web-audio-api.AudioBufferSourceNode.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype._dsp" id="apidoc.element.web-audio-api.AudioBufferSourceNode.prototype._dsp">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>_dsp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_dsp = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  })
+}
+
+onended() {}
+
+_tick() {
+  super._tick(arguments)
+  return this.<span class="apidocCodeKeywordSpan">_dsp</span>()
+}
+
+_dsp() {}
+
+_dspZeros() {
+  return new AudioBuffer(1, constants.BLOCK_SIZE, this.context.sampleRate)
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype._dspZeros" id="apidoc.element.web-audio-api.AudioBufferSourceNode.prototype._dspZeros">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>_dspZeros
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_dspZeros = function () {
+  return new AudioBuffer(1, constants.BLOCK_SIZE, this.context.sampleRate)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype._tick" id="apidoc.element.web-audio-api.AudioBufferSourceNode.prototype._tick">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>_tick
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_tick = function () {
+  super$0.prototype._tick.call(this, arguments)
+  return this._dsp()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._dsp = this._dspZeros
+  })
+}
+
+onended() {}
+
+_tick() {
+  super.<span class="apidocCodeKeywordSpan">_tick</span>(arguments)
+  return this._dsp()
+}
+
+_dsp() {}
+
+_dspZeros() {
+  return new AudioBuffer(1, constants.BLOCK_SIZE, this.context.sampleRate)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype.onended" id="apidoc.element.web-audio-api.AudioBufferSourceNode.prototype.onended">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>onended
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onended = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype.start" id="apidoc.element.web-audio-api.AudioBufferSourceNode.prototype.start">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>start
+        <span class="apidocSignatureSpan">(when, offset, duration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (when, offset, duration) {var this$0 = this;
+  this._schedule(&#x27;start&#x27;, when, function()  {
+    if (!this$0.buffer) throw new Error(&#x27;invalid buffer&#x27;)
+
+    // Subsequent calls to `start` have no effect
+    this$0.start = function() {}
+
+    // keeps track of the current position in the buffer
+    var blockSize = constants.BLOCK_SIZE,
+      sampleRate = this$0.context.sampleRate,
+      cursor, cursorEnd, cursorNext, missingFrames, outBuffer
+
+    var reinitPlayback = function()  {
+      cursor = (offset ? offset : this$0.loopStart) * sampleRate
+      if (duration) cursorEnd = cursor + duration * sampleRate
+      else if (this$0.loopEnd) cursorEnd = this$0.loopEnd * sampleRate
+      else cursorEnd = this$0.buffer.length
+      cursorNext = cursor
+    }
+    reinitPlayback()
+
+    this$0._dsp = function() {
+      cursorNext = cursor + blockSize
+      // If there&#x27;s enough data left to be read in the buffer, just read it,
+      // otherwise we need to handle things a bit differently
+      if (cursorNext &#x3c; cursorEnd) {
+        outBuffer = this.buffer.slice(cursor, cursorNext)
+        cursor = cursorNext
+        return outBuffer
+      } else {
+        outBuffer = new AudioBuffer(this.buffer.numberOfChannels, blockSize, sampleRate)
+        outBuffer.set(this.buffer.slice(cursor, cursorNext))
+        // If looping, we must reinitialize our cursor variables.
+        // If not looping, we free the node
+        if (this.loop) {
+          missingFrames = cursorNext - cursorEnd
+          reinitPlayback()
+          cursorNext = cursor + missingFrames
+          outBuffer.set(this.buffer.slice(cursor, cursorNext), outBuffer.length - missingFrames)
+        } else {
+          if (this.onended) {
+            this._schedule(&#x27;onended&#x27;, this.context.currentTime + (cursorNext - cursorEnd) / sampleRate, this.onended)
+          }
+          this._schedule(&#x27;kill&#x27;, this.context.currentTime + (cursorNext - cursorEnd) / sampleRate, this._kill.bind(this))
+        }
+        cursor = cursorNext
+        return outBuffer
+      }
+    }
+
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioBufferSourceNode.prototype.stop" id="apidoc.element.web-audio-api.AudioBufferSourceNode.prototype.stop">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioBufferSourceNode.prototype.</span>stop
+        <span class="apidocSignatureSpan">(when)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (when) {var this$0 = this;
+  this._schedule(&#x27;stop&#x27;, when, function()  {
+    this$0._dsp = this$0._dspZeros
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioContext" id="apidoc.module.web-audio-api.AudioContext">module web-audio-api.AudioContext</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioContext.AudioContext" id="apidoc.element.web-audio-api.AudioContext.AudioContext">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioContext
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioContext(opts) {var this$0 = this;
+  var outBuff
+
+<span class="apidocCodeCommentSpan">  /*Object.defineProperty(this, &#x27;currentTime&#x27;, {
+  writable: false,
+  get: function() {}
+})*/
+</span>
+  Object.defineProperty(this, &#x27;destination&#x27;, {
+    writable: false,
+    value: new AudioDestinationNode(this)
+  })
+  //this.destination = new AudioDestinationNode(this)
+
+  /*Object.defineProperty(this, &#x27;sampleRate&#x27;, {
+  writable: false,
+  value: {} // TODO
+})
+
+Object.defineProperty(this, &#x27;listener&#x27;, {
+  writable: false,
+  value: {} // TODO
+})*/
+  this.currentTime = 0
+  this.sampleRate = 44100
+  this.numberOfChannels = 2
+  this.bitDepth = 16
+
+  this.format = {
+    numberOfChannels: 2,
+    bitDepth: 16,
+    sampleRate: this.sampleRate
+  }
+
+  opts = opts || {}
+  if (opts.bufferSize) this.format.bufferSize = opts.bufferSize
+  if (opts.numBuffers) this.format.numBuffers = opts.numBuffers
+
+  this.outStream = null
+  this._encoder = pcmUtils.BufferEncoder(this.format)
+  this._frame = 0
+  this._playing = true
+  this._audioOutLoopRunning = false
+
+  // When a new connection is established, start to pull audio
+  this.destination._inputs[0].on(&#x27;connection&#x27;, function()  {
+    if (this$0._audioOutLoopRunning) return
+    if (!this$0.outStream) throw new Error(&#x27;you need to set outStream to send the audio somewhere&#x27;)
+    this$0._audioOutLoopRunning = true
+    async.whilst(
+      function()  {
+        return this$0._playing
+      },
+      function(next)  {
+        outBuff = this$0.destination._tick()
+        // If there is space in the output stream&#x27;s buffers, we write,
+        // otherwise we wait for &#x27;drain&#x27;
+        this$0._frame += BLOCK_SIZE
+        this$0.currentTime = this$0._frame * 1 / this$0.sampleRate
+        // TODO setImmediate here is for cases where the outStream won&#x27;t get
+        // full and we end up with call stack max size reached.
+        // But is it optimal?
+        if (this$0.outStream.write(this$0._encoder(outBuff._data)))
+          setImmediate(next)
+        else this$0.outStream.once(&#x27;drain&#x27;, next)
+      },
+      function(err)  {
+        this$0._audioOutLoopRunning = false
+        if (err) return this$0.emit(&#x27;error&#x27;, err)
+      }
+    )
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioContext.prototype" id="apidoc.module.web-audio-api.AudioContext.prototype">module web-audio-api.AudioContext.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioContext.prototype._kill" id="apidoc.element.web-audio-api.AudioContext.prototype._kill">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>_kill
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_kill = function () {
+  this._playing = false
+  if (this.outStream) {
+    if (this.outStream.close) {
+      this.outStream.close()
+    } else {
+      this.outStream.end()
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+---------------------
+
+Right now everything runs in one process, so if you set a break point in your code, there&#x27;s going to be a lot of buffer underflows
+, and you won&#x27;t be able to debug anything.
+
+One trick is to kill the `AudioContext` right before the break point, like this:
+
+```javascript
+context.<span class="apidocCodeKeywordSpan">_kill</span>()
+debugger
+```
+
+that way the audio loop is stopped, and you can inspect your objects in peace.
+
+
+Running the tests
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioContext.prototype.collectNodes" id="apidoc.element.web-audio-api.AudioContext.prototype.collectNodes">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>collectNodes
+        <span class="apidocSignatureSpan">(node, allNodes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">collectNodes = function (node, allNodes) {var this$0 = this;
+  allNodes = allNodes || []
+  node = node || this.destination
+  _.chain(node._inputs)
+    .pluck(&#x27;sources&#x27;)
+    .reduce(function(all, sources) {
+      return all.concat(sources)
+    }, [])
+    .pluck(&#x27;node&#x27;).value()
+    .forEach(function(upstreamNode)  {
+      if (!_.contains(allNodes, upstreamNode)) {
+        allNodes.push(upstreamNode)
+        this$0.collectNodes(upstreamNode, allNodes)
+      }
+    })
+  return allNodes
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      .reduce(function(all, sources) {
+        return all.concat(sources)
+      }, [])
+      .pluck(&#x27;node&#x27;).value()
+      .forEach((upstreamNode) =&#x3e; {
+        if (!_.contains(allNodes, upstreamNode)) {
+          allNodes.push(upstreamNode)
+          this.<span class="apidocCodeKeywordSpan">collectNodes</span>(upstreamNode, allNodes)
+        }
+      })
+    return allNodes
+  }
+
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioContext.prototype.createBuffer" id="apidoc.element.web-audio-api.AudioContext.prototype.createBuffer">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>createBuffer
+        <span class="apidocSignatureSpan">(numberOfChannels, length, sampleRate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createBuffer = function (numberOfChannels, length, sampleRate) {
+  return new AudioBuffer(numberOfChannels, length, sampleRate)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioContext.prototype.createBufferSource" id="apidoc.element.web-audio-api.AudioContext.prototype.createBufferSource">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>createBufferSource
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createBufferSource = function () {
+  return new AudioBufferSourceNode(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioContext.prototype.createGain" id="apidoc.element.web-audio-api.AudioContext.prototype.createGain">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>createGain
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createGain = function () {
+  return new GainNode(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioContext.prototype.createScriptProcessor" id="apidoc.element.web-audio-api.AudioContext.prototype.createScriptProcessor">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>createScriptProcessor
+        <span class="apidocSignatureSpan">(bufferSize, numberOfInputChannels, numberOfOutputChannels)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createScriptProcessor = function (bufferSize, numberOfInputChannels, numberOfOutputChannels) {
+  return new ScriptProcessorNode(this, bufferSize, numberOfInputChannels, numberOfOutputChannels)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioContext.prototype.decodeAudioData" id="apidoc.element.web-audio-api.AudioContext.prototype.decodeAudioData">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioContext.prototype.</span>decodeAudioData
+        <span class="apidocSignatureSpan">(audioData, successCallback, errorCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeAudioData = function (audioData, successCallback, errorCallback) {
+  utils.decodeAudioData(audioData, function(err, audioBuffer) {
+    if (err) errorCallback(err)
+    else successCallback(audioBuffer)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+createBuffer(numberOfChannels, length, sampleRate) {
+  return new AudioBuffer(numberOfChannels, length, sampleRate)
+}
+
+decodeAudioData(audioData, successCallback, errorCallback) {
+  utils.<span class="apidocCodeKeywordSpan">decodeAudioData</span>(audioData, function(err, audioBuffer) {
+    if (err) errorCallback(err)
+    else successCallback(audioBuffer)
+  })
+}
+
+createBufferSource() {
+  return new AudioBufferSourceNode(this)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioDestinationNode" id="apidoc.module.web-audio-api.AudioDestinationNode">module web-audio-api.AudioDestinationNode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioDestinationNode.AudioDestinationNode" id="apidoc.element.web-audio-api.AudioDestinationNode.AudioDestinationNode">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioDestinationNode
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioDestinationNode(context) {
+  super$0.call(this, context, 1, 0, 2, &#x27;explicit&#x27;, &#x27;speakers&#x27;)
+
+  readOnlyAttr(this, &#x27;maxChannelCount&#x27;, 2)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioDestinationNode.prototype" id="apidoc.module.web-audio-api.AudioDestinationNode.prototype">module web-audio-api.AudioDestinationNode.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioDestinationNode.prototype._tick" id="apidoc.element.web-audio-api.AudioDestinationNode.prototype._tick">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioDestinationNode.prototype.</span>_tick
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_tick = function () {
+  return this._inputs[0]._tick()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._dsp = this._dspZeros
+  })
+}
+
+onended() {}
+
+_tick() {
+  super.<span class="apidocCodeKeywordSpan">_tick</span>(arguments)
+  return this._dsp()
+}
+
+_dsp() {}
+
+_dspZeros() {
+  return new AudioBuffer(1, constants.BLOCK_SIZE, this.context.sampleRate)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioNode" id="apidoc.module.web-audio-api.AudioNode">module web-audio-api.AudioNode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioNode.AudioNode" id="apidoc.element.web-audio-api.AudioNode.AudioNode">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioNode
+        <span class="apidocSignatureSpan">(context, numberOfInputs, numberOfOutputs, channelCount, channelCountMode, channelInterpretation)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioNode(context, numberOfInputs, numberOfOutputs, channelCount, channelCountMode, channelInterpretation) {
+
+  super$0.call(this, context)
+
+  readOnlyAttr(this, &#x27;context&#x27;, context)
+  readOnlyAttr(this, &#x27;numberOfInputs&#x27;, numberOfInputs)
+  readOnlyAttr(this, &#x27;numberOfOutputs&#x27;, numberOfOutputs)
+
+  channelCount = channelCount || 2
+  Object.defineProperty(this, &#x27;channelCount&#x27;, {
+    get: function() {
+      return channelCount
+    },
+    set: function(val) {
+      if (val &#x3c; 1) throw new Error(&#x27;Invalid number of channels&#x27;)
+      channelCount = val
+    },
+    configurable: true
+  })
+
+  var channelCountMode = channelCountMode
+  Object.defineProperty(this, &#x27;channelCountMode&#x27;, {
+    get: function() {
+      return channelCountMode
+    },
+    set: function(val) {
+      if (ChannelCountMode.indexOf(val) === -1)
+        throw new Error(&#x27;Unvalid value for channelCountMode : &#x27; + val)
+      channelCountMode = val
+    },
+    configurable: true
+  })
+
+  var channelInterpretation = channelInterpretation
+  Object.defineProperty(this, &#x27;channelInterpretation&#x27;, {
+    get: function() {
+      return channelInterpretation
+    },
+    set: function(val) {
+      if (ChannelInterpretation.indexOf(val) === -1)
+        throw new Error(&#x27;Unvalid value for channelInterpretation : &#x27; + val)
+      channelInterpretation = val
+    },
+    configurable: true
+  })
+
+  // Initialize audio ports
+  var i
+  this._inputs = []
+  this._outputs = []
+  for (i = 0; i &#x3c; this.numberOfInputs; i++)
+    this._inputs.push(new AudioInput(context, this, i))
+  for (i = 0; i &#x3c; this.numberOfOutputs; i++)
+    this._outputs.push(new AudioOutput(context, this, i))
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioNode.prototype" id="apidoc.module.web-audio-api.AudioNode.prototype">module web-audio-api.AudioNode.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioNode.prototype._kill" id="apidoc.element.web-audio-api.AudioNode.prototype._kill">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioNode.prototype.</span>_kill
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_kill = function () {
+  this._inputs.forEach(function(input) {
+    input._kill()
+  })
+  this._outputs.forEach(function(output) {
+    output._kill()
+  })
+  this.removeAllListeners()
+  this._tick = function() {
+    throw new Error(&#x27;this node has been killed&#x27;)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+---------------------
+
+Right now everything runs in one process, so if you set a break point in your code, there&#x27;s going to be a lot of buffer underflows
+, and you won&#x27;t be able to debug anything.
+
+One trick is to kill the `AudioContext` right before the break point, like this:
+
+```javascript
+context.<span class="apidocCodeKeywordSpan">_kill</span>()
+debugger
+```
+
+that way the audio loop is stopped, and you can inspect your objects in peace.
+
+
+Running the tests
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioNode.prototype.connect" id="apidoc.element.web-audio-api.AudioNode.prototype.connect">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioNode.prototype.</span>connect
+        <span class="apidocSignatureSpan">(destination)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (destination) {var output = arguments[1];if(output === void 0)output = 0;var input = arguments[2];if(input === void 0)input
+ = 0;
+  if (output &#x3e;= this.numberOfOutputs)
+    throw new Error(&#x27;output out of bounds &#x27; + output)
+  if (input &#x3e;= destination.numberOfInputs)
+    throw new Error(&#x27;input out of bounds &#x27; + input)
+  this._outputs[output].connect(destination._inputs[input])
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Overall view of implementation
+------------------------------
+
+Each time you create an ```AudioNode``` (like for instance an ```AudioBufferSourceNode``` or a ```GainNode```), it inherits from
+ ```DspObject``` which is in charge of two things:
+- register schedule events with ```_schedule```
+- compute the appropriate digital signal processing with ```_tick```
+
+Each time you connect an ```AudioNode``` using ```source.<span class="apidocCodeKeywordSpan">connect</span>(destination, output,
+input)``` it connects the relevant ```AudioOutput``` instances of ```source``` node the the relevant ```AudioInput``` instance of
+ the ```destination``` node.
+
+To instantiate all of these ```AudioNode```, you needed an overall ```AudioContext``` instance. This latter has a ```destination
+``` property (where the sound will flow out), instance of ```AudioDestinationNode```, which inherits from ```AudioNode```. The ```
+AudioContext``` instance keeps track of connections to the ```destination```. When that happens, it triggers the audio loop, calling
+ ```_tick``` infinitely on the ```destination```, which will itself call ```_tick``` on its input ... and so forth go up on the
+whole audio graph.
+
+
+Running the debugger
+---------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioNode.prototype.disconnect" id="apidoc.element.web-audio-api.AudioNode.prototype.disconnect">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioNode.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function () {var output = arguments[0];if(output === void 0)output = 0;
+  if (output &#x3e;= this.numberOfOutputs)
+    throw new Error(&#x27;output out of bounds &#x27; + output)
+  var audioOut = this._outputs[output]
+  audioOut.sinks.slice(0).forEach(function(sink) {
+    audioOut.disconnect(sink)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+disconnect(output = 0) {
+  if (output &#x3e;= this.numberOfOutputs)
+    throw new Error(&#x27;output out of bounds &#x27; + output)
+  var audioOut = this._outputs[output]
+  audioOut.sinks.slice(0).forEach(function(sink) {
+    audioOut.<span class="apidocCodeKeywordSpan">disconnect</span>(sink)
+  })
+}
+
+// Disconnects all ports and remove all events listeners
+_kill() {
+  this._inputs.forEach(function(input) {
+    input._kill()
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioParam" id="apidoc.module.web-audio-api.AudioParam">module web-audio-api.AudioParam</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.AudioParam" id="apidoc.element.web-audio-api.AudioParam.AudioParam">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>AudioParam
+        <span class="apidocSignatureSpan">(context, defaultValue, rate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioParam(context, defaultValue, rate) {
+  super$0.call(this, context)
+
+  if (typeof defaultValue !== &#x27;number&#x27;)
+    throw new Error(&#x27;defaultValue must be a number&#x27;)
+
+  rate = rate || &#x27;k&#x27;
+  if (rate !== &#x27;a&#x27; &#x26;&#x26; rate !== &#x27;k&#x27;)
+    throw new Error(&#x27;invalid rate, must be a or k&#x27;)
+  this._rate = rate
+
+  Object.defineProperty(this, &#x27;defaultValue&#x27;, {
+    value: defaultValue,
+    writable: false
+  })
+
+  this._instrinsicValue = defaultValue
+  Object.defineProperty(this, &#x27;value&#x27;, {
+    get: function() {
+      return this._instrinsicValue
+    },
+    set: function(newVal) {
+      this._instrinsicValue = newVal
+      this._toConstant()
+      this._scheduled = []
+    }
+  })
+
+  this._toConstant()
+
+  // Using AudioNodes as inputs for AudioParam :
+  // we have to set same channel attributes as for AudioNodes,
+  // so the input knows how to do the mixing
+  this.channelInterpretation = &#x27;discrete&#x27;
+  this.channelCount = 1
+  this.channelCountMode = &#x27;explicit&#x27;
+  this._input = new AudioInput(this.context, this, 0)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.AudioParam.prototype" id="apidoc.module.web-audio-api.AudioParam.prototype">module web-audio-api.AudioParam.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._arithmeticSeries" id="apidoc.element.web-audio-api.AudioParam.prototype._arithmeticSeries">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_arithmeticSeries
+        <span class="apidocSignatureSpan">(U0, step)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_arithmeticSeries = function (U0, step) {
+  var Un = U0
+  return function() {
+    return Un += step
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  _to_aRate_linearRamp(target, endTime) {
+var U0 = this._instrinsicValue,
+  Un = U0,
+  startTime = this.context.currentTime,
+  step = (target - U0) / (endTime - startTime) * 1 / this.context.sampleRate,
+  next = this.<span class="apidocCodeKeywordSpan">_arithmeticSeries</span>(U0, step),
+  clip = step &#x3e; 0 ? Math.min : Math.max,
+  i
+
+this._dsp = function(array) {
+  for (i = 0; i &#x3c; BLOCK_SIZE; i++) {
+    array[i] = clip(Un, target)
+    Un = next()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._dsp" id="apidoc.element.web-audio-api.AudioParam.prototype._dsp">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_dsp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_dsp = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  })
+}
+
+onended() {}
+
+_tick() {
+  super._tick(arguments)
+  return this.<span class="apidocCodeKeywordSpan">_dsp</span>()
+}
+
+_dsp() {}
+
+_dspZeros() {
+  return new AudioBuffer(1, constants.BLOCK_SIZE, this.context.sampleRate)
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._geometricSeries" id="apidoc.element.web-audio-api.AudioParam.prototype._geometricSeries">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_geometricSeries
+        <span class="apidocSignatureSpan">(U0, ratio)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_geometricSeries = function (U0, ratio) {
+  var Un = U0
+  return function() {
+    return Un *= ratio
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  _to_aRate_exponentialRamp(target, timeEnd) {
+var timeStart = this.context.currentTime,
+  U0 = this._instrinsicValue,
+  Un = U0,
+  ratio = Math.pow(target / U0, 1 / (this.context.sampleRate * (timeEnd - timeStart))),
+  next = this.<span class="apidocCodeKeywordSpan">_geometricSeries</span>(U0, ratio),
+  clip = ratio &#x3e; 1 ? Math.min : Math.max,
+  i
+
+this._dsp = function(array) {
+  for (i = 0; i &#x3c; BLOCK_SIZE; i++) {
+    array[i] = clip(target, Un)
+    Un = next()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._nextEvent" id="apidoc.element.web-audio-api.AudioParam.prototype._nextEvent">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_nextEvent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_nextEvent = function () {
+  var event = this._scheduled[0]
+  if (event) {
+    if (event.type === &#x27;LinearRampToValue&#x27;)
+      this[&#x27;_to_&#x27; + this._rate + &#x27;Rate_linearRamp&#x27;](event.args[0], event.time)
+    else if (event.type === &#x27;ExponentialRampToValue&#x27;)
+      this[&#x27;_to_&#x27; + this._rate + &#x27;Rate_exponentialRamp&#x27;](event.args[0], event.time)
+    else this._toConstant()
+  } else this._toConstant()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.channelCountMode = &#x27;explicit&#x27;
+  this._input = new AudioInput(this.context, this, 0)
+}
+
+setValueAtTime(value, startTime) {
+  this._schedule(&#x27;SetValue&#x27;, startTime, () =&#x3e; {
+    this._instrinsicValue = value
+    this.<span class="apidocCodeKeywordSpan">_nextEvent</span>()
+  })
+}
+
+linearRampToValueAtTime(value, endTime) {
+  this._schedule(&#x27;LinearRampToValue&#x27;, endTime, () =&#x3e; {
+    this._instrinsicValue = value
+    this._nextEvent()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._tick" id="apidoc.element.web-audio-api.AudioParam.prototype._tick">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_tick
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_tick = function () {
+  super$0.prototype._tick.call(this)
+  var buffer = new AudioBuffer(1, BLOCK_SIZE, this.context.sampleRate)
+  this._dsp(buffer.getChannelData(0))
+  return buffer
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._dsp = this._dspZeros
+  })
+}
+
+onended() {}
+
+_tick() {
+  super.<span class="apidocCodeKeywordSpan">_tick</span>(arguments)
+  return this._dsp()
+}
+
+_dsp() {}
+
+_dspZeros() {
+  return new AudioBuffer(1, constants.BLOCK_SIZE, this.context.sampleRate)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._toConstant" id="apidoc.element.web-audio-api.AudioParam.prototype._toConstant">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_toConstant
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_toConstant = function () {
+  var value = this._instrinsicValue,
+    i
+
+  this._dsp = function(array) {
+    for (i = 0; i &#x3c; BLOCK_SIZE; i++) array[i] = value
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this._instrinsicValue = defaultValue
+Object.defineProperty(this, &#x27;value&#x27;, {
+  get: function() {
+    return this._instrinsicValue
+  },
+  set: function(newVal) {
+    this._instrinsicValue = newVal
+    this.<span class="apidocCodeKeywordSpan">_toConstant</span>()
+    this._scheduled = []
+  }
+})
+
+this._toConstant()
+
+// Using AudioNodes as inputs for AudioParam :
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_SetValueCurve" id="apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_SetValueCurve">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_aRate_SetValueCurve
+        <span class="apidocSignatureSpan">(values, startTime, duration, onended)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_to_aRate_SetValueCurve = function (values, startTime, duration, onended) {
+  var valuesLength = values.length,
+    coeff = valuesLength / duration,
+    Ts = 1 / this.context.sampleRate,
+    i, t
+
+  this._dsp = function(array) {
+    t = this.context.currentTime
+    for (i = 0; i &#x3c; BLOCK_SIZE; i++) {
+      array[i] = values[Math.min(Math.round(coeff * (t - startTime)), valuesLength - 1)]
+      t += Ts
+    }
+    this._instrinsicValue = array[BLOCK_SIZE - 1]
+    if (t - startTime &#x3e;= duration) onended()
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_exponentialRamp" id="apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_exponentialRamp">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_aRate_exponentialRamp
+        <span class="apidocSignatureSpan">(target, timeEnd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_to_aRate_exponentialRamp = function (target, timeEnd) {
+  var timeStart = this.context.currentTime,
+    U0 = this._instrinsicValue,
+    Un = U0,
+    ratio = Math.pow(target / U0, 1 / (this.context.sampleRate * (timeEnd - timeStart))),
+    next = this._geometricSeries(U0, ratio),
+    clip = ratio &#x3e; 1 ? Math.min : Math.max,
+    i
+
+  this._dsp = function(array) {
+    for (i = 0; i &#x3c; BLOCK_SIZE; i++) {
+      array[i] = clip(target, Un)
+      Un = next()
+    }
+    this._instrinsicValue = array[BLOCK_SIZE - 1]
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_linearRamp" id="apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_linearRamp">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_aRate_linearRamp
+        <span class="apidocSignatureSpan">(target, endTime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_to_aRate_linearRamp = function (target, endTime) {
+  var U0 = this._instrinsicValue,
+    Un = U0,
+    startTime = this.context.currentTime,
+    step = (target - U0) / (endTime - startTime) * 1 / this.context.sampleRate,
+    next = this._arithmeticSeries(U0, step),
+    clip = step &#x3e; 0 ? Math.min : Math.max,
+    i
+
+  this._dsp = function(array) {
+    for (i = 0; i &#x3c; BLOCK_SIZE; i++) {
+      array[i] = clip(Un, target)
+      Un = next()
+    }
+    this._instrinsicValue = array[BLOCK_SIZE - 1]
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_setTarget" id="apidoc.element.web-audio-api.AudioParam.prototype._to_aRate_setTarget">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_aRate_setTarget
+        <span class="apidocSignatureSpan">(target, Tc, onended)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_to_aRate_setTarget = function (target, Tc, onended) {
+  var timeStart = this.context.currentTime,
+    U0 = (this._instrinsicValue - target),
+    Un = target + U0,
+    ratio = Math.exp(-(1 / this.context.sampleRate) / Tc),
+    next = this._geometricSeries(U0, ratio),
+    clip = U0 &#x3e; 0 ? Math.max : Math.min,
+    i
+
+  this._dsp = function(array) {
+    for (i = 0; i &#x3c; BLOCK_SIZE; i++) {
+      array[i] = clip(Un, target)
+      Un = target + next()
+    }
+    this._instrinsicValue = array[BLOCK_SIZE - 1]
+    if (array[BLOCK_SIZE - 1] === target) onended()
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_SetValueCurve" id="apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_SetValueCurve">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_kRate_SetValueCurve
+        <span class="apidocSignatureSpan">(values, startTime, duration, onended)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_to_kRate_SetValueCurve = function (values, startTime, duration, onended) {
+  var valuesLength = values.length,
+    coeff = valuesLength / duration,
+    Ts = 1 / this.context.sampleRate,
+    i, val
+
+  this._dsp = function(array) {
+    val = values[Math.min(Math.round(coeff * (this.context.currentTime - startTime)), valuesLength - 1)]
+    for (i = 0; i &#x3c; BLOCK_SIZE; i++) array[i] = val
+    this._instrinsicValue = array[BLOCK_SIZE - 1]
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_exponentialRamp" id="apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_exponentialRamp">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_kRate_exponentialRamp
+        <span class="apidocSignatureSpan">(target, timeEnd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_to_kRate_exponentialRamp = function (target, timeEnd) {
+  var timeStart = this.context.currentTime,
+    U0 = this._instrinsicValue,
+    Un = U0,
+    ratio = Math.pow(target / U0, BLOCK_SIZE / (this.context.sampleRate * (timeEnd - timeStart))),
+    next = this._geometricSeries(U0, ratio),
+    i
+
+  this._dsp = function(array) {
+    for (i = 0; i &#x3c; BLOCK_SIZE; i++) array[i] = Un
+    Un = next()
+    this._instrinsicValue = array[BLOCK_SIZE - 1]
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_linearRamp" id="apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_linearRamp">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_kRate_linearRamp
+        <span class="apidocSignatureSpan">(target, endTime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_to_kRate_linearRamp = function (target, endTime) {
+  var U0 = this._instrinsicValue,
+    Un = U0,
+    startTime = this.context.currentTime,
+    step = (target - U0) / (endTime - startTime) * BLOCK_SIZE / this.context.sampleRate,
+    next = this._arithmeticSeries(U0, step),
+    i
+
+  this._dsp = function(array) {
+    for (i = 0; i &#x3c; BLOCK_SIZE; i++) array[i] = Un
+    Un = next()
+    this._instrinsicValue = array[BLOCK_SIZE - 1]
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_setTarget" id="apidoc.element.web-audio-api.AudioParam.prototype._to_kRate_setTarget">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>_to_kRate_setTarget
+        <span class="apidocSignatureSpan">(target, Tc, onended)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_to_kRate_setTarget = function (target, Tc, onended) {
+  var timeStart = this.context.currentTime,
+    U0 = this._instrinsicValue - target,
+    Un = target + U0,
+    ratio = Math.exp(-(BLOCK_SIZE / this.context.sampleRate) / Tc),
+    next = this._geometricSeries(U0, ratio),
+    i
+
+  this._dsp = function(array) {
+    for (i = 0; i &#x3c; BLOCK_SIZE; i++) array[i] = Un
+    Un = target + next()
+    this._instrinsicValue = array[BLOCK_SIZE - 1]
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype.cancelScheduledValues" id="apidoc.element.web-audio-api.AudioParam.prototype.cancelScheduledValues">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>cancelScheduledValues
+        <span class="apidocSignatureSpan">(startTime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cancelScheduledValues = function (startTime) {
+  throw new Error(&#x27;implement me&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype.exponentialRampToValueAtTime" id="apidoc.element.web-audio-api.AudioParam.prototype.exponentialRampToValueAtTime">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>exponentialRampToValueAtTime
+        <span class="apidocSignatureSpan">(value, endTime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exponentialRampToValueAtTime = function (value, endTime) {var this$0 = this;
+  if (this._instrinsicValue &#x3c;= 0 || value &#x3c;= 0)
+    throw new Error(&#x27;cannot create exponential ramp with value &#x3c;= 0&#x27;)
+  this._schedule(&#x27;ExponentialRampToValue&#x27;, endTime, function()  {
+    this$0._instrinsicValue = value
+    this$0._nextEvent()
+  }, [value])
+  this._nextEvent()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype.linearRampToValueAtTime" id="apidoc.element.web-audio-api.AudioParam.prototype.linearRampToValueAtTime">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>linearRampToValueAtTime
+        <span class="apidocSignatureSpan">(value, endTime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">linearRampToValueAtTime = function (value, endTime) {var this$0 = this;
+  this._schedule(&#x27;LinearRampToValue&#x27;, endTime, function()  {
+    this$0._instrinsicValue = value
+    this$0._nextEvent()
+  }, [value])
+  this._nextEvent()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype.setTargetAtTime" id="apidoc.element.web-audio-api.AudioParam.prototype.setTargetAtTime">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>setTargetAtTime
+        <span class="apidocSignatureSpan">(target, startTime, timeConstant)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTargetAtTime = function (target, startTime, timeConstant) {var this$0 = this;
+  this._schedule(&#x27;SetTarget&#x27;, startTime, function()  {
+    this$0[&#x27;_to_&#x27; + this$0._rate + &#x27;Rate_setTarget&#x27;](target, timeConstant, function()  {
+      this$0._instrinsicValue = target
+      this$0._nextEvent()
+    })
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype.setValueAtTime" id="apidoc.element.web-audio-api.AudioParam.prototype.setValueAtTime">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>setValueAtTime
+        <span class="apidocSignatureSpan">(value, startTime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setValueAtTime = function (value, startTime) {var this$0 = this;
+  this._schedule(&#x27;SetValue&#x27;, startTime, function()  {
+    this$0._instrinsicValue = value
+    this$0._nextEvent()
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.AudioParam.prototype.setValueCurveAtTime" id="apidoc.element.web-audio-api.AudioParam.prototype.setValueCurveAtTime">
+        function <span class="apidocSignatureSpan">web-audio-api.AudioParam.prototype.</span>setValueCurveAtTime
+        <span class="apidocSignatureSpan">(values, startTime, duration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setValueCurveAtTime = function (values, startTime, duration) {var this$0 = this;
+  this._schedule(&#x27;SetValueCurve&#x27;, startTime, function()  {
+    this$0[&#x27;_to_&#x27; + this$0._rate + &#x27;Rate_SetValueCurve&#x27;](values, startTime, duration, function()  {
+      this$0._instrinsicValue = values[values.length - 1]
+      this$0._nextEvent()
+    })
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.GainNode" id="apidoc.module.web-audio-api.GainNode">module web-audio-api.GainNode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.GainNode.GainNode" id="apidoc.element.web-audio-api.GainNode.GainNode">
+        function <span class="apidocSignatureSpan">web-audio-api.</span>GainNode
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GainNode(context) {
+  super$0.call(this, context, 1, 1, undefined, &#x27;max&#x27;, &#x27;speakers&#x27;)
+  readOnlyAttr(this, &#x27;gain&#x27;, new AudioParam(this.context, 1, &#x27;a&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.GainNode.prototype" id="apidoc.module.web-audio-api.GainNode.prototype">module web-audio-api.GainNode.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.GainNode.prototype._tick" id="apidoc.element.web-audio-api.GainNode.prototype._tick">
+        function <span class="apidocSignatureSpan">web-audio-api.GainNode.prototype.</span>_tick
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_tick = function () {
+  var outBuff, inBuff, gainArray, i, ch, inChArray, outChArray
+  super$0.prototype._tick.call(this, arguments)
+  inBuff = this._inputs[0]._tick()
+  gainArray = this.gain._tick().getChannelData(0)
+  outBuff = new AudioBuffer(inBuff.numberOfChannels, BLOCK_SIZE, this.context.sampleRate)
+  for (ch = 0; ch &#x3c; inBuff.numberOfChannels; ch++) {
+    inChArray = inBuff.getChannelData(ch)
+    outChArray = outBuff.getChannelData(ch)
+    for (i = 0; i &#x3c; BLOCK_SIZE; i++) {
+      outChArray[i] = inChArray[i] * gainArray[i]
+    }
+  }
+  return outBuff
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._dsp = this._dspZeros
+  })
+}
+
+onended() {}
+
+_tick() {
+  super.<span class="apidocCodeKeywordSpan">_tick</span>(arguments)
+  return this._dsp()
+}
+
+_dsp() {}
+
+_dspZeros() {
+  return new AudioBuffer(1, constants.BLOCK_SIZE, this.context.sampleRate)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.audioports" id="apidoc.module.web-audio-api.audioports">module web-audio-api.audioports</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.audioports.AudioInput" id="apidoc.element.web-audio-api.audioports.AudioInput">
+        function <span class="apidocSignatureSpan">web-audio-api.audioports.</span>AudioInput
+        <span class="apidocSignatureSpan">(context, node, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class AudioInput extends AudioPort {
+
+  constructor(context, node, id) {
+    super(context, node, id)
+
+    // `computedNumberOfChannels` is scheduled to be recalculated everytime a connection
+    // or disconnection happens.
+    this.computedNumberOfChannels = null
+    this.on(&#x27;connected&#x27;, () =&#x3e; {
+      this.computedNumberOfChannels = null
+    })
+    this.on(&#x27;disconnected&#x27;, () =&#x3e; {
+      this.computedNumberOfChannels = null
+    })
+
+    // Just for code clarity
+    Object.defineProperty(this, &#x27;sources&#x27;, {
+      get: function() {
+        return this.connections
+      }
+    })
+  }
+
+  connect(source) {
+    // When the number of channels of the source changes, we trigger
+    // computation of `computedNumberOfChannels`
+    source.on(&#x27;_numberOfChannels&#x27;, () =&#x3e; {
+      this.computedNumberOfChannels = null
+    })
+    //AudioPort.prototype.connect.call(this, source)
+    super.connect(source)
+  }
+
+  disconnect(source) {
+    source.removeAllListeners(&#x27;_numberOfChannels&#x27;)
+    //AudioPort.prototype.disconnect.call(this, source)
+    super.disconnect(source)
+  }
+
+  _tick() {
+    var i, ch, inNumChannels, inBuffers = this.sources.map(function(source) {
+      return source._tick()
+    })
+
+    if (this.computedNumberOfChannels === null) {
+      var maxChannelsUpstream
+      if (this.sources.length) {
+        maxChannelsUpstream = _.chain(inBuffers).pluck(&#x27;numberOfChannels&#x27;).max().value()
+      } else maxChannelsUpstream = 0
+      this._computeNumberOfChannels(maxChannelsUpstream)
+    }
+    var outBuffer = new AudioBuffer(this.computedNumberOfChannels, BLOCK_SIZE, this.context.sampleRate)
+
+    inBuffers.forEach((inBuffer) =&#x3e; {
+      var ch = new ChannelMixing(inBuffer.numberOfChannels, this.computedNumberOfChannels, this.node.channelInterpretation)
+      ch.process(inBuffer, outBuffer)
+    })
+    return outBuffer
+  }
+
+  _computeNumberOfChannels(maxChannelsUpstream) {
+    var countMode = this.node.channelCountMode,
+      channelCount = this.node.channelCount
+    maxChannelsUpstream = maxChannelsUpstream || 1
+
+    if (countMode === &#x27;max&#x27;) {
+      this.computedNumberOfChannels = maxChannelsUpstream
+    } else if (countMode === &#x27;clamped-max&#x27;) {
+      this.computedNumberOfChannels = Math.min(maxChannelsUpstream, channelCount)
+    } else if (countMode === &#x27;explicit&#x27;)
+      this.computedNumberOfChannels = channelCount
+      // this shouldn&#x27;t happen
+    else throw new Error(&#x27;invalid channelCountMode&#x27;)
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.audioports.AudioOutput" id="apidoc.element.web-audio-api.audioports.AudioOutput">
+        function <span class="apidocSignatureSpan">web-audio-api.audioports.</span>AudioOutput
+        <span class="apidocSignatureSpan">(context, node, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class AudioOutput extends AudioPort {
+
+  constructor(context, node, id) {
+    super(context, node, id)
+
+    // This caches the block fetched from the node.
+    this._cachedBlock = {
+      time: -1,
+      buffer: null
+    }
+
+    // This catches the number of channels of the audio going through this output
+    this._numberOfChannels = null
+
+    // Just for code clarity
+    Object.defineProperty(this, &#x27;sinks&#x27;, {
+      get: function() {
+        return this.connections
+      }
+    })
+  }
+
+  // Pulls the audio from the node only once, and copies it so that several
+  // nodes downstream can pull the same block.
+  _tick() {
+    if (this._cachedBlock.time &#x3c; this.context.currentTime) {
+      var outBuffer = this.node._tick()
+      if (this._numberOfChannels !== outBuffer.numberOfChannels) {
+        this._numberOfChannels = outBuffer.numberOfChannels
+        this.emit(&#x27;_numberOfChannels&#x27;)
+      }
+      this._cachedBlock = {
+        time: this.context.currentTime,
+        buffer: outBuffer
+      }
+      return outBuffer
+    } else return this._cachedBlock.buffer
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.index" id="apidoc.module.web-audio-api.index">module web-audio-api.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.index.AudioBuffer" id="apidoc.element.web-audio-api.index.AudioBuffer">
+        function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioBuffer
+        <span class="apidocSignatureSpan">(numberOfChannels, length, sampleRate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioBuffer(numberOfChannels, length, sampleRate) {
+  var ch
+  this._data = []
+  // Just a hack to be able to create a partially initialized AudioBuffer
+  if (arguments.length) {
+    for (ch = 0; ch &#x3c; numberOfChannels; ch++)
+      this._data.push(new Float32Array(length))
+    this._defineAttrs(numberOfChannels, length, sampleRate)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.index.AudioBufferSourceNode" id="apidoc.element.web-audio-api.index.AudioBufferSourceNode">
+        function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioBufferSourceNode
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioBufferSourceNode(context) {
+  super$0.call(this, context, 0, 1, undefined, &#x27;max&#x27;, &#x27;speakers&#x27;)
+
+  this.buffer = null
+  this.loop = false
+  this.loopStart = 0
+  this.loopEnd = 0
+
+  readOnlyAttr(this, &#x27;playbackRate&#x27;, new AudioParam(this.context, 1, &#x27;a&#x27;))
+
+  this._dsp = this._dspZeros
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.index.AudioContext" id="apidoc.element.web-audio-api.index.AudioContext">
+        function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioContext
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioContext(opts) {var this$0 = this;
+  var outBuff
+
+<span class="apidocCodeCommentSpan">  /*Object.defineProperty(this, &#x27;currentTime&#x27;, {
+  writable: false,
+  get: function() {}
+})*/
+</span>
+  Object.defineProperty(this, &#x27;destination&#x27;, {
+    writable: false,
+    value: new AudioDestinationNode(this)
+  })
+  //this.destination = new AudioDestinationNode(this)
+
+  /*Object.defineProperty(this, &#x27;sampleRate&#x27;, {
+  writable: false,
+  value: {} // TODO
+})
+
+Object.defineProperty(this, &#x27;listener&#x27;, {
+  writable: false,
+  value: {} // TODO
+})*/
+  this.currentTime = 0
+  this.sampleRate = 44100
+  this.numberOfChannels = 2
+  this.bitDepth = 16
+
+  this.format = {
+    numberOfChannels: 2,
+    bitDepth: 16,
+    sampleRate: this.sampleRate
+  }
+
+  opts = opts || {}
+  if (opts.bufferSize) this.format.bufferSize = opts.bufferSize
+  if (opts.numBuffers) this.format.numBuffers = opts.numBuffers
+
+  this.outStream = null
+  this._encoder = pcmUtils.BufferEncoder(this.format)
+  this._frame = 0
+  this._playing = true
+  this._audioOutLoopRunning = false
+
+  // When a new connection is established, start to pull audio
+  this.destination._inputs[0].on(&#x27;connection&#x27;, function()  {
+    if (this$0._audioOutLoopRunning) return
+    if (!this$0.outStream) throw new Error(&#x27;you need to set outStream to send the audio somewhere&#x27;)
+    this$0._audioOutLoopRunning = true
+    async.whilst(
+      function()  {
+        return this$0._playing
+      },
+      function(next)  {
+        outBuff = this$0.destination._tick()
+        // If there is space in the output stream&#x27;s buffers, we write,
+        // otherwise we wait for &#x27;drain&#x27;
+        this$0._frame += BLOCK_SIZE
+        this$0.currentTime = this$0._frame * 1 / this$0.sampleRate
+        // TODO setImmediate here is for cases where the outStream won&#x27;t get
+        // full and we end up with call stack max size reached.
+        // But is it optimal?
+        if (this$0.outStream.write(this$0._encoder(outBuff._data)))
+          setImmediate(next)
+        else this$0.outStream.once(&#x27;drain&#x27;, next)
+      },
+      function(err)  {
+        this$0._audioOutLoopRunning = false
+        if (err) return this$0.emit(&#x27;error&#x27;, err)
+      }
+    )
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.index.AudioDestinationNode" id="apidoc.element.web-audio-api.index.AudioDestinationNode">
+        function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioDestinationNode
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioDestinationNode(context) {
+  super$0.call(this, context, 1, 0, 2, &#x27;explicit&#x27;, &#x27;speakers&#x27;)
+
+  readOnlyAttr(this, &#x27;maxChannelCount&#x27;, 2)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.index.AudioNode" id="apidoc.element.web-audio-api.index.AudioNode">
+        function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioNode
+        <span class="apidocSignatureSpan">(context, numberOfInputs, numberOfOutputs, channelCount, channelCountMode, channelInterpretation)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioNode(context, numberOfInputs, numberOfOutputs, channelCount, channelCountMode, channelInterpretation) {
+
+  super$0.call(this, context)
+
+  readOnlyAttr(this, &#x27;context&#x27;, context)
+  readOnlyAttr(this, &#x27;numberOfInputs&#x27;, numberOfInputs)
+  readOnlyAttr(this, &#x27;numberOfOutputs&#x27;, numberOfOutputs)
+
+  channelCount = channelCount || 2
+  Object.defineProperty(this, &#x27;channelCount&#x27;, {
+    get: function() {
+      return channelCount
+    },
+    set: function(val) {
+      if (val &#x3c; 1) throw new Error(&#x27;Invalid number of channels&#x27;)
+      channelCount = val
+    },
+    configurable: true
+  })
+
+  var channelCountMode = channelCountMode
+  Object.defineProperty(this, &#x27;channelCountMode&#x27;, {
+    get: function() {
+      return channelCountMode
+    },
+    set: function(val) {
+      if (ChannelCountMode.indexOf(val) === -1)
+        throw new Error(&#x27;Unvalid value for channelCountMode : &#x27; + val)
+      channelCountMode = val
+    },
+    configurable: true
+  })
+
+  var channelInterpretation = channelInterpretation
+  Object.defineProperty(this, &#x27;channelInterpretation&#x27;, {
+    get: function() {
+      return channelInterpretation
+    },
+    set: function(val) {
+      if (ChannelInterpretation.indexOf(val) === -1)
+        throw new Error(&#x27;Unvalid value for channelInterpretation : &#x27; + val)
+      channelInterpretation = val
+    },
+    configurable: true
+  })
+
+  // Initialize audio ports
+  var i
+  this._inputs = []
+  this._outputs = []
+  for (i = 0; i &#x3c; this.numberOfInputs; i++)
+    this._inputs.push(new AudioInput(context, this, i))
+  for (i = 0; i &#x3c; this.numberOfOutputs; i++)
+    this._outputs.push(new AudioOutput(context, this, i))
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.index.AudioParam" id="apidoc.element.web-audio-api.index.AudioParam">
+        function <span class="apidocSignatureSpan">web-audio-api.index.</span>AudioParam
+        <span class="apidocSignatureSpan">(context, defaultValue, rate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AudioParam(context, defaultValue, rate) {
+  super$0.call(this, context)
+
+  if (typeof defaultValue !== &#x27;number&#x27;)
+    throw new Error(&#x27;defaultValue must be a number&#x27;)
+
+  rate = rate || &#x27;k&#x27;
+  if (rate !== &#x27;a&#x27; &#x26;&#x26; rate !== &#x27;k&#x27;)
+    throw new Error(&#x27;invalid rate, must be a or k&#x27;)
+  this._rate = rate
+
+  Object.defineProperty(this, &#x27;defaultValue&#x27;, {
+    value: defaultValue,
+    writable: false
+  })
+
+  this._instrinsicValue = defaultValue
+  Object.defineProperty(this, &#x27;value&#x27;, {
+    get: function() {
+      return this._instrinsicValue
+    },
+    set: function(newVal) {
+      this._instrinsicValue = newVal
+      this._toConstant()
+      this._scheduled = []
+    }
+  })
+
+  this._toConstant()
+
+  // Using AudioNodes as inputs for AudioParam :
+  // we have to set same channel attributes as for AudioNodes,
+  // so the input knows how to do the mixing
+  this.channelInterpretation = &#x27;discrete&#x27;
+  this.channelCount = 1
+  this.channelCountMode = &#x27;explicit&#x27;
+  this._input = new AudioInput(this.context, this, 0)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.index.GainNode" id="apidoc.element.web-audio-api.index.GainNode">
+        function <span class="apidocSignatureSpan">web-audio-api.index.</span>GainNode
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GainNode(context) {
+  super$0.call(this, context, 1, 1, undefined, &#x27;max&#x27;, &#x27;speakers&#x27;)
+  readOnlyAttr(this, &#x27;gain&#x27;, new AudioParam(this.context, 1, &#x27;a&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-audio-api.utils" id="apidoc.module.web-audio-api.utils">module web-audio-api.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.utils.decodeAudioData" id="apidoc.element.web-audio-api.utils.decodeAudioData">
+        function <span class="apidocSignatureSpan">web-audio-api.utils.</span>decodeAudioData
+        <span class="apidocSignatureSpan">(buffer, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeAudioData = function (buffer, done) {
+  var asset = AV.Asset.fromBuffer(buffer)
+
+  asset.on(&#x27;error&#x27;, function(err) {
+    done(err)
+  })
+
+  asset.decodeToBuffer(function(decoded) {
+    var deinterleaved = []
+      , numberOfChannels = asset.format.channelsPerFrame
+      , length = Math.floor(decoded.length / numberOfChannels)
+      , ch, chArray, i
+
+    for (ch = 0; ch &#x3c; numberOfChannels; ch++)
+      deinterleaved.push(new Float32Array(length))
+
+    for (ch = 0; ch &#x3c; numberOfChannels; ch++) {
+      chArray = deinterleaved[ch]
+      for (i = 0; i &#x3c; length; i++)
+        chArray[i] = decoded[ch + i * numberOfChannels]
+    }
+
+    done(null, AudioBuffer.fromArray(deinterleaved, asset.format.sampleRate))
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+createBuffer(numberOfChannels, length, sampleRate) {
+  return new AudioBuffer(numberOfChannels, length, sampleRate)
+}
+
+decodeAudioData(audioData, successCallback, errorCallback) {
+  utils.<span class="apidocCodeKeywordSpan">decodeAudioData</span>(audioData, function(err, audioBuffer) {
+    if (err) errorCallback(err)
+    else successCallback(audioBuffer)
+  })
+}
+
+createBufferSource() {
+  return new AudioBufferSourceNode(this)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-audio-api.utils.readOnlyAttr" id="apidoc.element.web-audio-api.utils.readOnlyAttr">
+        function <span class="apidocSignatureSpan">web-audio-api.utils.</span>readOnlyAttr
+        <span class="apidocSignatureSpan">(obj, name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readOnlyAttr = function (obj, name, value) {
+  Object.defineProperty(obj, name, {
+    value: value,
+    writable: false
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
